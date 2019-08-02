@@ -4,6 +4,7 @@
   "main": "dist/index.js",
   "module": "dist/temp.esm.js",
   "typings": "dist/index.d.ts",
+  "description": "The <Link /> between @reach/router and @shopify/polaris",
   "files": [
     "dist"
   ],
