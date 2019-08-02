@@ -1,0 +1,37 @@
+{
+  "name": "polaris-reach-link",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "module": "dist/temp.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --env=jsdom"
+  },
+  "peerDependencies": {
+    "@reach/router": ">=1",
+    "@shopify/polaris": ">=3",
+    "react": ">=16"
+  },
+  "devDependencies": {
+    "@reach/router": "1.2.1",
+    "@satel/eslint-config-ts-react": "1.0.0",
+    "@shopify/jest-dom-mocks": "^2.7.1",
+    "@shopify/polaris": "3.21.0",
+    "@testing-library/react": "8.0.7",
+    "@types/jest": "24.0.16",
+    "@types/reach__router": "1.2.4",
+    "@types/react": "16.8.24",
+    "@types/react-dom": "16.8.5",
+    "eslint": "5.16.0",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "tsdx": "0.7.2",
+    "tslib": "1.10.0",
+    "typescript": "3.5.3"
+  }
+}
