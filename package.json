@@ -1,10 +1,27 @@
 {
   "name": "polaris-reach-link",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "license": "MIT",
+  "author": {
+    "email": "quinn@blenkinsop.net",
+    "name": "Quinn Blenkinsop"
+  },
   "main": "dist/index.js",
   "module": "dist/temp.esm.js",
   "typings": "dist/index.d.ts",
   "description": "The <Link /> between @reach/router and @shopify/polaris",
+  "homepage": "https://github.com/qw-in/polaris-reach-link",
+  "bugs": {
+    "url": "https://github.com/qw-in/polaris-reach-link/issues"
+  },
+  "keywords": [
+    "shopify",
+    "polaris",
+    "reach",
+    "router",
+    "link",
+    "react"
+  ],
   "files": [
     "dist"
   ],
@@ -15,24 +32,24 @@
   },
   "peerDependencies": {
     "@reach/router": ">=1",
-    "@shopify/polaris": ">=3",
+    "@shopify/polaris": ">=4",
     "react": ">=16"
   },
   "devDependencies": {
     "@reach/router": "1.2.1",
-    "@satel/eslint-config-ts-react": "1.0.0",
-    "@shopify/jest-dom-mocks": "^2.7.1",
-    "@shopify/polaris": "3.21.0",
-    "@testing-library/react": "8.0.7",
-    "@types/jest": "24.0.16",
-    "@types/reach__router": "1.2.4",
-    "@types/react": "16.8.24",
-    "@types/react-dom": "16.8.5",
-    "eslint": "5.16.0",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
-    "tsdx": "0.7.2",
+    "@satel/eslint-config-ts-react": "3.0.0",
+    "@shopify/jest-dom-mocks": "2.8.2",
+    "@shopify/polaris": "4.5.0",
+    "@testing-library/react": "9.3.0",
+    "@types/jest": "24.0.18",
+    "@types/reach__router": "1.2.6",
+    "@types/react": "16.9.5",
+    "@types/react-dom": "16.9.1",
+    "eslint": "6.5.1",
+    "react": "16.10.2",
+    "react-dom": "16.10.2",
+    "tsdx": "0.9.3",
     "tslib": "1.10.0",
-    "typescript": "3.5.3"
+    "typescript": "3.6.4"
   }
 }

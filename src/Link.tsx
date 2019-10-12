@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link as ReachLink } from '@reach/router';
-import { Props, LinkLikeComponent } from '@shopify/polaris/types/components/UnstyledLink';
+import { AppProviderProps } from '@shopify/polaris';
 
 /**
  * Link component that provides compatiblity between
@@ -11,14 +11,25 @@ import { Props, LinkLikeComponent } from '@shopify/polaris/types/components/Unst
  *    {children}
  *   </AppProvider>
  */
-const Link: LinkLikeComponent = (props: Props) => {
-  const { url, external, children, ref, ...rest } = props;
-
+const Link: AppProviderProps['linkComponent'] = ({
+  url,
+  external,
+  children,
+  ...props
+}: any) => {
   const target = external ? '_blank' : undefined;
   const rel = external ? 'noopener noreferrer' : undefined;
 
+  if (external) {
+    return (
+      <a href={url} target={target} rel={rel}>
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <ReachLink to={url} target={target} rel={rel} {...rest}>
+    <ReachLink to={url} {...props}>
       {children}
     </ReachLink>
   );

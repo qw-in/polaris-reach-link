@@ -2,6 +2,7 @@
 import React, { ReactNode } from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import { AppProvider, Link as PolarisLink, Page } from '@shopify/polaris';
+import en from '@shopify/polaris/locales/en.json';
 import {
   installMockStorage,
   ensureMocksReset,
@@ -47,7 +48,7 @@ const Polaris = (_: RouteComponentProps) => (
 
 function App() {
   return (
-    <AppProvider linkComponent={Link}>
+    <AppProvider linkComponent={Link} i18n={en}>
       <Router>
         <Home path="/" />
         <About path="/about" />
@@ -70,8 +71,10 @@ function renderWithRouter(
 beforeAll(installMockStorage);
 beforeEach(() => {
   ensureMocksReset();
+  matchMedia.mock();
 });
 afterEach(() => {
+  matchMedia.restore();
   cleanup();
 });
 
@@ -104,8 +107,6 @@ describe('<Link />', () => {
   });
 
   it('can navigate with page breadcrumb', async () => {
-    matchMedia.mock();
-
     const { findByText, findByTitle } = renderWithRouter(<App />, {
       route: '/polaris',
     });
@@ -115,6 +116,5 @@ describe('<Link />', () => {
 
     const component = await findByTitle('home');
     expect(component.innerHTML).toEqual('You are home');
-    matchMedia.restore();
   });
 });
